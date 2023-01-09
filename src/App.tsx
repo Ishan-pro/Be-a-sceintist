@@ -5,7 +5,7 @@ import { About, Help, Home} from './pages'
 const Navbar = () => {
   return (
     <nav className='bg-blue-500 p-3 text-white'>
-      <h1 className='text-xl'>LogIt</h1>
+      <h1 className='text-xl'>Be A Scientist</h1>
     </nav>
   )
 }
