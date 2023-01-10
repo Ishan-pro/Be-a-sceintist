@@ -4,15 +4,16 @@ import supabase from '../supabase'
 
 export default function Postdetail() {
     const params = useParams()
-    const [post, setPost] = useState<Post>({title:"", created_at:"", content:"", id:0})
+    const [content, setPost] = useState<string>("")
+    console.log(params)
     useEffect(() => {
-      supabase.from('posts').select<"post", Post>().eq('title', params.title).then(res => { console.log(res); res.data && setPost(res.data[0])})
- 
+      supabase.from('posts').select<"post", Post>().eq('title', params.title).then(res => { console.log(res); res.data && setPost(res.data[0].content)})
+      
     }, [])
      return (
     <div className='p-5'>
       <h1 className='text-xl text-center'>{params.title}</h1>
-      <p>{post.content}</p>
+      <p>{content}</p>
     </div>
   )
 }
