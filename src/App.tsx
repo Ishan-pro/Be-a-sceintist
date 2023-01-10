@@ -4,8 +4,15 @@ import { About, Help, Home, Postdetail} from './pages'
 
 const Navbar = () => {
   return (
-    <nav className='bg-blue-500 p-3 text-white'>
-      <h1 className='text-xl'>Be A Scientist</h1>
+    <nav className='bg-blue-500 p-3 text-white flex'>
+      <h1 className='text-xl flex-1'>
+       <a href="/" >Be A Scientist</a>
+      </h1>
+      <ul className='grid grid-cols-2 gap-2'>
+        <li><a href="/about/" >About</a></li>
+
+        <li><a href="/help/">Help</a></li>
+      </ul>
     </nav>
   )
 }
