@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import supabase from '../supabase'
+import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 
 export default function Postdetail() {
     const params = useParams()
@@ -13,7 +15,9 @@ export default function Postdetail() {
      return (
     <div className='p-5'>
       <h1 className='text-xl text-center'>{params.title}</h1>
-      <p>{content}</p>
+      <p>
+        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
+      </p>
     </div>
   )
 }
