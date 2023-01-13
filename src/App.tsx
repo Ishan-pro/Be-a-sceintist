@@ -8,7 +8,7 @@ const Navbar = () => {
       <h1 className='text-xl flex-1'>
        <a href="/" >Be A Scientist</a>
       </h1>
-      <ul className='grid grid-cols-2 gap-2'>
+      <ul className='grid grid-cols-2 gap-2' style={{listStyleType:"none"}}>
         <li><a href="/about/" >About</a></li>
 
         <li><a href="/help/">Help</a></li>
