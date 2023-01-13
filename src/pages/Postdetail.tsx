@@ -21,9 +21,9 @@ export default function Postdetail() {
       <div className='md:grid md:grid-cols-3'>
 
     <div className='p-5 md:col-span-2'>
-      <h1 className='text-xl text-center mb-3'>{params.title}</h1>
+      <h1 className='text-center mb-3'>{params.title}</h1>
       <p>
-        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
+        <ReactMarkdown rehypePlugins={[rehypeRaw]} children={content}></ReactMarkdown>
       </p>
     </div>
     <div className='block md:shadow-lg p-3'>
