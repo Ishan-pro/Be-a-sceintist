@@ -8,3 +8,21 @@ p {
     font-size: 18px;
     line-height: 2 rem;
 }
+
+h1 {
+    font-size: 30px;
+}
+h2 {
+    font-size: 20px;
+    text-align: center;
+}
+ul {
+    list-style-type: disc;
+    padding: 2rem;
+}
+blockquote {
+    border-left: 0.75rem solid rgb(197, 188, 188);
+    font-style: italic;
+    padding: 1.5rem;
+    
+}
