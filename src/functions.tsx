@@ -15,7 +15,7 @@ export const PostView = (props:Post) => {
     const datelist = date.split("-")
     date =  parseInt(datelist[2]).toString() + " "+ monthlist[parseInt(date[1])] + " "+ datelist[0]
     return (
-        <article className="bg-gray-300 p-3 rounded">
+        <article className="border-solid border-2 border-gray-300 shadow-md p-3 ">
             <h3 className='text-lg font-semibold hover:underline hover:font-bold'><a href={`/read/${props.title}`}>{props.title}</a></h3>
             <span className='text-muted'>{date}</span>
         </article>

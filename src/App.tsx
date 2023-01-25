@@ -4,8 +4,8 @@ import { About, Help, Home, Postdetail} from './pages'
 
 const Navbar = () => {
   return (
-    <nav className='bg-blue-500 p-3 text-white flex'>
-      <h1 className='text-xl flex-1'>
+    <nav className='bg-blue-800 p-3 text-white flex h-20 items-center'>
+      <h1 className='text-xl flex-1' >
        <a href="/" >Be A Scientist</a>
       </h1>
       <ul className='grid grid-cols-2 gap-2' style={{listStyleType:"none"}}>
@@ -21,6 +21,8 @@ function App() {
   return (
     <>
     <Navbar/>
+    <main className='bg-gray-200 h-screen'>
+
     <Routes>
       <Route path='/about' element={<About/>}/>
       <Route path='/help' element={<Help/>}/>
@@ -28,6 +30,7 @@ function App() {
       <Route path="/read/:title" element={<Postdetail/>}/>
 
     </Routes>
+    </main>
     </>
 
   )
