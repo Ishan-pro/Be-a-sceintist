@@ -3,7 +3,7 @@ import supabase from './supabase'
 
 
 export const fetchPosts = async(title="") => {
-    const posts = await supabase.from('posts').select<"post", Post>().filter('title', "not.eq", title)
+    const posts = await supabase.from('posts').select<"post", Post>().filter('title', "not.eq", title).order('created_at', {ascending:false})
     console.log(posts.data)
     return (posts.data ? posts.data : [])
 }
@@ -15,7 +15,7 @@ export const PostView = (props:Post) => {
     const datelist = date.split("-")
     date =  parseInt(datelist[2]).toString() + " "+ monthlist[parseInt(date[1])] + " "+ datelist[0]
     return (
-        <article className="bg-gray-300 p-3 rounded">
+        <article className="border-solid border-2 border-gray-300 shadow-md p-3 bg-white">
             <h3 className='text-lg font-semibold hover:underline hover:font-bold'><a href={`/read/${props.title}`}>{props.title}</a></h3>
             <span className='text-muted'>{date}</span>
         </article>

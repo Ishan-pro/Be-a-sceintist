@@ -3,14 +3,23 @@
 @tailwind components;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 @tailwind utilities;
 
-p {
+a:hover {
+    font-weight: bold;
+}
+
+html {
+
     font-family: 'Source Serif Pro', 'Times New Roman', Times, serif;
+}
+
+p {
     font-size: 18px;
     line-height: 2 rem;
 }
 
 h1 {
     font-size: 30px;
+    font-weight: 400;
 }
 h2 {
     font-size: 20px;

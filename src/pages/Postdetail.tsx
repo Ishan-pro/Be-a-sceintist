@@ -18,18 +18,18 @@ export default function Postdetail() {
       
     }, [])
      return (
-      <div className='md:grid md:grid-cols-3'>
+      <div className='md:grid md:grid-cols-4 ' style={{marginTop:"10vh"}}>
 
-    <div className='p-5 md:col-span-2'>
+    <div className='p-5 md:col-start-2 col-end-4 bg-white'>
       <h1 className='text-center mb-3'>{params.title}</h1>
       <p>
         <ReactMarkdown rehypePlugins={[rehypeRaw]} children={content}></ReactMarkdown>
       </p>
     </div>
     <div className='block md:shadow-lg p-3'>
-      <h1 className='text-lg'>
+      <h3 >
         More Posts
-      </h1>
+      </h3>
       <div>
         {posts.map((post) => <PostView {...post}/>)}
       </div>
