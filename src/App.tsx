@@ -4,7 +4,7 @@ import { About, Help, Home, Postdetail} from './pages'
 
 const Navbar = () => {
   return (
-    <nav className='bg-blue-800 p-3 text-white flex h-20 items-center lg:absolute lg:top-0 lg:left-0 w-full'>
+    <nav className='bg-blue-800 p-3 text-white flex h-14 items-center lg:absolute lg:top-0 lg:left-0 w-full'>
       <h1 className='text-xl flex-1' >
        <a href="/" >Be A Scientist</a>
       </h1>
@@ -21,7 +21,7 @@ function App() {
   return (
     <>
     <Navbar/>
-    <main className='bg-gray-200 h-screen lg:grid lg:place-items-center'>
+    <main className='bg-gray-200 min-h-screen lg:grid lg:place-items-center'>
 
     <Routes>
       <Route path='/about' element={<About/>}/>
