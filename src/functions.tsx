@@ -3,7 +3,7 @@ import supabase from './supabase'
 
 
 export const fetchPosts = async(title="") => {
-    const posts = await supabase.from('posts').select<"post", Post>().filter('title', "not.eq", title)
+    const posts = await supabase.from('posts').select<"post", Post>().filter('title', "not.eq", title).order('created_at', {ascending:false})
     console.log(posts.data)
     return (posts.data ? posts.data : [])
 }
