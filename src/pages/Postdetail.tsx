@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom'
 import supabase from '../supabase'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
-import { fetchPosts, PostView } from '../functions'
+import { fetchPosts, PostView, Loader } from '../functions'
 
 export default function Postdetail() {
     const [posts, setPosts] = useState<Post[]>([])
@@ -23,7 +23,7 @@ export default function Postdetail() {
     <div className='p-5 md:col-start-2 col-end-4 bg-white'>
       <h1 className='text-center mb-3'>{params.title}</h1>
       <p>
-        <ReactMarkdown rehypePlugins={[rehypeRaw]} children={content}></ReactMarkdown>
+        {content ? <ReactMarkdown rehypePlugins={[rehypeRaw]} children={content}></ReactMarkdown> : <Loader/>}
       </p>
     </div>
     <div className='block md:shadow-lg p-3'>

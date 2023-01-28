@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { PostView, fetchPosts } from '../functions'
+import { PostView, fetchPosts, Loader } from '../functions'
 
 export default function Home() {
     const [posts, setPosts] = useState<Post[]>([])
@@ -14,7 +14,7 @@ export default function Home() {
             
             <div className='lg:grid lg:grid-cols-2'>
                 
-                {posts[0] ? posts.map(data => <PostView {...data}></PostView>) : "loading..."}
+                {posts[0] ? posts.map(data => <PostView {...data}></PostView>) : <Loader/>}
             </div>
         </main>
     </div>
