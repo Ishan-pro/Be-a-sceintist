@@ -22,3 +22,13 @@ export const PostView = (props:Post) => {
 
     )
 }
+
+export const Loader = () => {
+    return (
+        <>
+
+<div className='loader'></div>
+
+        </>
+    )
+}
