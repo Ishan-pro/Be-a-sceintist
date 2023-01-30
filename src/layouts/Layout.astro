@@ -1,0 +1,90 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<nav class='bg-blue-800 p-3 text-white flex h-14 items-center lg:absolute lg:top-0 lg:left-0 w-full'>
+			<h1 class='text-xl flex-1' >
+			 <a href="/" >Be A Scientist</a>
+			</h1>
+			<ul class='grid grid-cols-2 gap-2' style={{listStyleType:"none"}}>
+			  <li><a href="/about/" >About</a></li>
+	  
+			  <li><a href="/help/">Help</a></li>
+			</ul>
+		  </nav>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	}
+	html {
+		
+		font-family: 'Source Serif Pro', 'Times New Roman', Times, serif;
+		background-color: #F6F6F6;
+	}
+	
+
+	a:hover {
+    	font-weight: bold;
+	}
+
+	html {
+
+	font-family: 'Source Serif Pro', 'Times New Roman', Times, serif;
+	}
+
+	p {
+	font-size: 18px;
+	line-height: 2 rem;
+	}
+
+	h1 {
+	font-size: 30px;
+	font-weight: 400;
+	}
+	h2 {
+	font-size: 20px;
+	text-align: center;
+	}
+	ul {
+	list-style-type: disc;
+	padding: 2rem;
+	}
+	blockquote {
+    border-left: 0.75rem dashed rgb(197, 188, 188);
+    font-style: italic;
+    padding: 1.5rem;
+    
+	}	
+
+	.loader {
+		animation: 0.5s rotate linear;
+		animation-iteration-count: infinite;
+		border-top: 1px solid blue;
+
+		border-left: 1px solid blue;
+		width: 50px;
+		height: 50px;
+		display: grid;
+		place-items: center;
+		justify-self: center;
+		border-radius: 100%;
+	}
+</style>
