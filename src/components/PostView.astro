@@ -1,0 +1,21 @@
+---
+    export interface Props {
+        title:string;
+        content:string;
+        created_at:string;
+        id:number;
+        published:boolean;
+    }
+
+    const {title, created_at} = Astro.props
+    
+    const monthlist = ["January", "Febraury", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    let date = created_at.substring(0, 10)
+    let datelist = date.split("-")
+    date =  parseInt(datelist[2]).toString() + " "+ monthlist[parseInt(date[1])] + " "+ datelist[0]
+
+---
+        <article class="border-solid border-2 border-gray-300 shadow-md p-3 bg-white">
+            <h3 class='text-lg font-semibold hover:underline hover:font-bold'>{title}</h3>
+            <span class='text-muted'>{date}</span>
+        </article>
