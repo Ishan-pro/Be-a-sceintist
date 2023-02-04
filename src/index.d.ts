@@ -3,4 +3,5 @@ interface Post {
     created_at:string,
     id:number,
     content:string,
+    summary:string
 }

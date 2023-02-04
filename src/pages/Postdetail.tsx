@@ -5,6 +5,8 @@ import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import { fetchPosts, PostView, Loader } from '../functions'
 
+
+
 export default function Postdetail() {
     const [posts, setPosts] = useState<Post[]>([])
     const [content, setPost] = useState<string>("")
@@ -26,14 +28,15 @@ export default function Postdetail() {
         {content ? <ReactMarkdown rehypePlugins={[rehypeRaw]} children={content}></ReactMarkdown> : <Loader/>}
       </p>
     </div>
-    <div className='block md:shadow-lg p-3'>
-      <h3 >
-        More Posts
-      </h3>
-      <div>
-        {posts.map((post) => <PostView {...post}/>)}
-      </div>
+      {content  && (<div className='block md:shadow-lg p-3'>
+    <h3 >
+      More Posts
+    </h3>
+    <div>
+      {posts.map((post) => <PostView {...post}/>)}
     </div>
+  </div>)}
+    
       </div>
   )
 }
