@@ -1,11 +1,18 @@
 import supabase from './supabase'
 import {useNavigate} from 'react-router-dom'
 
+const setCache = (cachename:string, cachebody:object) => {
+    let item = sessionStorage.getItem(cachename)
+    item && sessionStorage.removeItem(cachename)
+    sessionStorage.setItem(cachename, cachebody.toString())
+}
 
 export const fetchPosts = async(title="") => {
-    const posts = await supabase.from('posts').select<"post", Post>().filter('title', "not.eq", title).order('created_at', {ascending:false})
+    let sessionposts = sessionStorage.getItem("posts")
+    let storedposts:object = sessionposts ? JSON.parse(sessionposts) : null
+    const posts = storedposts ||await supabase.from('posts').select<"post", Post>().filter('title', "not.eq", title).order('created_at', {ascending:false})
     
-    return (posts.data ? posts.data : [])
+    return (posts ? posts : [])
 }
 
 
