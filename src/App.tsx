@@ -4,7 +4,7 @@ import { About, Help, Home, Postdetail} from './pages'
 
 const Navbar = () => {
   return (
-    <nav className='bg-blue-800 p-3 text-white flex h-14 items-center lg:absolute lg:top-0 lg:left-0 w-full'>
+    <nav className='bg-blue-800 p-3 text-white flex h-14 items-center '>
       <h1 className='text-xl flex-1' >
        <a href="/" >Be A Scientist</a>
       </h1>
@@ -21,15 +21,20 @@ function App() {
   return (
     <>
     <Navbar/>
-    <main className='bg-gray-200 min-h-screen lg:grid lg:place-items-center'>
-
+    <main className='grid grid-cols-4'>
+      <div className='col-span-3'>
+    <main className='bg-gray-200 min-h-screen lg:grid lg:place-items-center grid '>
+    
     <Routes>
-      <Route path='/about' element={<About/>}/>
+      
       <Route path='/help' element={<Help/>}/>
       <Route path="/" element={<Home/>}/>
       <Route path="/read/:title" element={<Postdetail/>}/>
 
-    </Routes>
+    </Routes></main>
+    </div>
+    
+    <About/>
     </main>
     </>
 
