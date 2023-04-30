@@ -21,7 +21,7 @@ function App() {
   return (
     <>
     <Navbar/>
-    <main className='grid grid-cols-4'>
+    <main className='lg:grid lg:grid-cols-4'>
       <div className='col-span-3'>
     <main className='bg-gray-200 min-h-screen lg:grid lg:place-items-center grid '>
     
@@ -31,7 +31,8 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/read/:title" element={<Postdetail/>}/>
 
-    </Routes></main>
+    </Routes>
+    </main>
     </div>
     
     <About/>

@@ -14,9 +14,9 @@ const initialState:State = {
 
 export const getPosts = createAsyncThunk(
     'posts/getPosts',
-    async(thunkAPI)=> {
-        const posts  = await supabase.from('posts').select<"posts", Post>().order('created_at', {ascending:false}).then(res => {res.data})
-        return posts
+    async(thunkAPI):Promise<Post[]>=> {
+        const posts  = await supabase.from('posts').select<"posts", Post>().order('created_at', {ascending:false})
+        return posts.data || []
     }
 )
 
