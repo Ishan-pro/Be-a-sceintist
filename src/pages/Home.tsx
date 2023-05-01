@@ -11,13 +11,13 @@ export default function Home() {
         dispatch(getPosts()).unwrap().then((result) => {setPosts(result)})
     }, [])
     return (
-    <div className=''>
-        <main className='col-span-1 p-4 bg-white self-stretch rounded shadow-lg w-full' >
-            <h1 className='text-xl p-2 m-2'>Blog Posts </h1>
+    <div style={{marginTop:"10vh"}}>
+        <main className='col-span-1 p-4 bg-white self-stretch rounded w-full' >
+            
             
             <div className=''>
                 
-                {posts[0] ? posts.map(data => <PostView {...data}></PostView>) : <Loader/>}
+                {posts[0] ? posts.map(data => <PostView {...data} key={data.id}></PostView>) : <Loader/>}
             </div>
         </main>
     </div>
