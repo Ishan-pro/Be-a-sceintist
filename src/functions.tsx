@@ -27,13 +27,13 @@ export const PostView = (props:Post) => {
     const content  = props.content.slice(0, 1100) 
     date =  parseInt(datelist[2]).toString() + " "+ month + " "+ datelist[0]
     return (
-        <article className="m-1 rounded p-3 bg-white m-h-1/10 hover:cursor-pointer" onClick={() => {navigate(`/read/${props.title}`)}}>
+        <article className="m-1 rounded p-3 bg-white m-h-1/10 hover:cursor-pointer" >
             <h3 className='text-xl text-center font-semibold hover:underline hover:font-bold'>{props.title}</h3>
             <span className='text-gray-700'>{date}</span>
-            <p className='text-lg'>        
+            <div className='text-lg'>        
                 {content ? <ReactMarkdown rehypePlugins={[rehypeRaw]} children={content}></ReactMarkdown> : <Loader/>}
-            </p>
-            <span className="text-blue-400">Read more...</span>
+            </div>
+            <a className="text-blue-400" href={`read/${props.title}`}>Read more...</a>
             <hr className='border border-dashed border-grey-500'/>
         </article>
 

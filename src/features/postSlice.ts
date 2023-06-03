@@ -39,7 +39,7 @@ export const getPost = createAsyncThunk(
             const posts:Post[] = JSON.parse(storedPostsCookie)
             post = posts.filter(object => object.title === title)[0]
         } else {
-            const postdata  = (await supabase.from('posts').select<"posts", Post>().order('created_at', {ascending:false}).filter('id', 'eq', title)).data
+            const postdata  = (await supabase.from('posts').select<"posts", Post>().order('created_at', {ascending:false}).filter('title', 'eq', title)).data
             post = postdata ? postdata[0] : basePost
             
         }
